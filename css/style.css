@@ -1,0 +1,169 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif !important;
+    background-color: #fff;
+    color: #111;
+}
+
+.container {
+    max-width: 1200px;
+    margin-top: 30px;
+}
+
+/* Layout */
+header {
+    margin-top: -16px;
+    background-color:antiquewhite;
+    padding-bottom: 1rem;
+}
+
+/* Score */
+.score {
+    font-family: monospace;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.25rem;
+    margin: 1rem;
+    position: relative;
+    transition: opacity 0.2s;
+}
+
+/* Play again button */
+#play-again-btn {
+    position: absolute;
+    top: -0rem;
+    left: 50%;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #111;
+    padding: 8px 10px;
+    outline: none;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s, background-color 0.2s;
+}
+
+#play-again-btn:hover {
+    background-color: #333;
+}
+
+#play-again-btn:active {
+    background-color: #555;
+}
+
+#play-again-btn.play-again-btn-entrance {
+    opacity: 1;
+    transform: translateX(6rem)
+}
+
+/* Draggable items */
+.draggable-items {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    transition: opacity 0.5s;
+}
+
+.draggable {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0rem 0.5rem;
+    cursor: move;
+    transition: opacity 0.2s;
+}
+
+.draggable:hover {
+    opacity: 0.5s;
+}
+
+/* Matching pairs */
+.matching-pairs {
+    transition: opacity 0.5s;
+}
+
+.matching-pair {
+    height: 10rem;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.matching-pair:first-child,
+.matching-pair:last-child {
+    margin-top: 0 !important;
+}
+
+.matching-pair span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    user-select: none;
+}
+
+.label {
+    font-size: 1rem;
+    width: 1000px;
+}
+
+/* Droppable */
+.droppable {
+    width: 10rem;
+    height: 10rem;
+    background-color: #fff;
+    border: 3px dashed #111;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.droppable img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 4px;
+}
+
+.droppable-hover {
+    background-color: #bee3f0;
+    transform: scale(1.1);
+}
+
+.dropped {
+    border-style: solid;
+}
+
+/* Dragged */
+.dragged {
+    user-select: none;
+    opacity: 0.1;
+    cursor: default;
+}
+
+.draggable.dragged:hover {
+    opacity: 0.1;
+}
+
+@media (max-width: 600px) {
+    html { font-size: 14px; }
+    #play-again-btn { top: -0.4rem; }
+    #play-again-btn.play-again-btn-entrance { transform: translateX(7rem); }
+}
